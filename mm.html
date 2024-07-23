@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tic-Tac-Toe</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <style>
+    .game-board {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 10px;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    .cell {
+      height: 100px;
+      background-color: #eee;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 48px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Tic-Tac-Toe</h1>
+    <div id="game-board" class="game-board"></div>
+    <div id="message" class="center-align"></div>
+    <div class="center-align">
+      <button id="restart-btn" class="btn waves-effect waves-light">Restart</button>
+    </div>
+  </div>
+
+  <script>
+    const gameBoard = document.getElementById('game-board');
+    const messageDiv = document.getElementById('message');
+    const restartBtn = document.getElementById('restart-btn');
+
+    let board = ['', '', '', '', '', '', '', '', ''];
+    let currentPlayer = 'X';
+    let gameOver = false;
+
+    function createBoard() {
+      for (let i = 0; i < 9; i++) {
+        const cell = document.createElement('div');
+        cell.classList.add('cell');
+        cell.addEventListener('click', handleCellClick);
+        gameBoard.appendChild(cell);
+      }
+    }
+
+    function handleCellClick(e) {
+      const cellIndex = Array.from(gameBoard.children).indexOf(e.target);
+      if (board[cellIndex] === '' && !gameOver) {
+        board[cellIndex] = currentPlayer;
+        e.target.textContent = currentPlayer;
+        checkWin();
+        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+      }
+    }
+
+    function checkWin() {
+      const winConditions = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
+        [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
+        [0, 4, 8], [2, 4, 6] // Diagonals
+      ];
+
+      for (let condition of winConditions) {
+        const [a, b, c] = condition;
+        if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+          gameOver = true;
+          messageDiv.textContent = `Player ${currentPlayer} wins!`;
+          return;
+        }
+      }
+
+      if (!board.includes('')) {
+        gameOver = true;
+        messageDiv.textContent = 'It\'s a tie!';
+      }
+    }
+
+    function restartGame() {
+      board = ['', '', '', '', '', '', '', '', ''];
+      currentPlayer = 'X';
+      gameOver = false;
+      messageDiv.textContent = '';
+      const cells = Array.from(gameBoard.children);
+      cells.forEach(cell => cell.textContent = '');
+    }
+
+    createBoard();
+    restartBtn.addEventListener('click', restartGame);
+  </script>
+</body>
+</html>

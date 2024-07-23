@@ -1,0 +1,25 @@
+body {
+    background-color: rgb(15, 15, 15);
+    padding: 9% 10% 08% 1%;
+}
+
+.gallery {
+    display: flex;
+    width: 30%;
+    height: 260px;
+}
+
+.gallery  img {
+    width: 30%;
+    height: 250 px;
+    
+    object-fit: cover;
+    border: 2px solid white;
+    border-radius: 5px;
+    transition: all ease 0.8s;
+}
+
+.gallery  img:hover {
+
+    width: 300%;
+}

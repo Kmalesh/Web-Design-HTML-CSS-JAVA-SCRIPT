@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>resposive website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <img src="logo.png" alt="" class="logo">
+            <h1>Learn Coding</h1>
+        </div>
+        <ul class="nav">
+            <li class="mobile"><a href="#">Home</a></li>
+            <li class="mobile"><a href="#">About</a></li>
+            <li class="mobile"><a href="#">Contact us</a></li>
+            <li class="mobile"><a href="#">Services</a></li>
+            <li onclick="shownav()" id="menu-btn"><a href="#"><svg fill= "white" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+        </ul>
+        <ul class="hide">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Services</a></li>
+            <li onclick="hidenav()" ><a href="#"><svg fill="#fff" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+        </ul>
+    </nav>
+    <section class="hero">
+        <img src="bg-img.png" alt="" class="bg">
+        <div class="hero-1">
+            <span class="first">Let's Learn Together</span>
+            <span class="second">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius velit cumque rerum illo assumenda, vitae praesentium, tenetur quaerat ratione nam, cum quibusdam ipsam.</span>
+            <form action="">
+                <input type="text" placeholder="Enter your E-mail">
+                <label for="">Subscribe</label>
+            </form>
+        </div>
+    </section>
+
+    <section class="hero-2">
+        <div class="left-1">
+            <p>
+                <span class="big-txt">What is coding?</span>
+                <span class="small-txt">
+                    Coding, or programming, is the process of creating sets of instructions that computers understand and execute. It involves using specific languages, like Python, JavaScript, or C++, to write logical sequences of commands. Through coding, developers solve problems by breaking them down into manageable steps called algorithms, employing logical and analytical thinking to design solutions. This skill finds applications in various fields, such as software development, automation, game design, and data analysis. It involves debugging—finding and fixing errors in code—and optimizing code for better performance. Continuous learning is crucial in this ever-evolving field, requiring adaptability to new technologies and problem-solving approaches.
+                </span>
+            </p>
+        </div>
+        <div class="right-1">
+            <img src="first-img.jpg" alt="">
+        </div>
+    </section>
+    <section class="hero-3">
+        <div class="left-1">
+            <p>
+                <span class="big-txt">How to start Coding?</span>
+                <span class="small-txt">
+                    To learn coding, start with a clear goal and select a beginner-friendly language like Python. Utilize online resources such as Codecademy, FreeCodeCamp, or Coursera for structured learning. Practice regularly by writing code, solving problems on platforms like LeetCode or HackerRank, and building small projects. Engage with coding communities for support and collaboration, and seek feedback to improve. Stay persistent, patient, and consistent in your learning. As you gain confidence, explore advanced topics and specialize in areas like web development, data science, or app creation. Embrace coding as a continuous learning journey, gradually advancing your skills through practice and exploration.
+                </span>
+            </p>
+        </div>
+        <div class="right-1">
+            <img src="second-img.jpg" alt="">
+        </div>
+    </section>
+    <footer>
+        COPYRIGHT &copy; ALL Rights Reserved 2023
+    </footer>
+
+    
+
+    <script>
+        function shownav(){
+            var show = document.querySelector('.hide')
+            show.style.display='flex'
+        }
+        function hidenav(){
+            var hide=document.querySelector('.hide')
+            hide.style.display='none'
+        }
+    </script>
+
+</body>
+</html>

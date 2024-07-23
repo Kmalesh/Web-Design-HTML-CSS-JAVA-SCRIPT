@@ -1,0 +1,70 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'poppins' ,Arial, Helvetica, sans-serif;
+
+}
+body{
+    color:rgb(94, 189, 244);
+
+}
+.header
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.logo
+{
+ position: relative;
+ font-size: 25px;
+ color: rgb(88, 171, 16);
+ text-decoration: non;
+ font-weight: 600;
+}
+.navbar a{
+   display: inline-block;
+    font-size: 25px;
+    color: rgb(19, 94, 224);
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+}
+.navbar a:hover
+{
+    color: rgb(255, 0, 102);
+    
+}
+.home
+{
+   position: relative; 
+   width: 100%;
+   justify-content: space-between;
+   height: 100vh;
+   background:rgb(15, 86, 217) ;
+   background-size: cover;
+   background-position: center;
+   display: flex;
+   align-items: center;
+   padding: 70px 10% 0;
+
+}
+.Suraj
+{
+    text-align: center;
+    padding: 22%;
+    margin-right: 10%;
+    height: 5px;
+    width: -70px;
+   
+}

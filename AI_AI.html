@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <style>
+    .project-card {
+      max-width: 200px;
+      margin:100px;
+      
+    }
+  </style>
+</head>
+<body>
+  <a href=https://loading.io/asset/749186></a>
+  <nav class="nav-extended">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">My Portfolio</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons"></i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="nav-content">
+      <ul class="tabs tabs-transparent">
+        <li class="tab"><a href="#about">About</a></li>
+        <li class="tab"><a href="#projects">Projects</a></li>
+        <li class="tab"><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <div id="hero" class="parallax-container">
+    <div class="parallax"><img src="https://via.placeholder.com/1400x600"></div>
+  </div>
+
+  <div class="container" id="about">
+    <h3>About Me</h3>
+    <p>Insert your about section content here...</p>
+  </div>
+
+  <div class="container" id="projects">
+    <h3>Projects</h3>
+    <div id="project-cards" class="row">
+      
+    </div>
+  </div>
+
+  <div class="container" id="contact">
+    <h3>Contact</h3>
+    <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="name" type="text" class="validate">
+            <label for="name">Name</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="email" type="email" class="validate">
+            <label for="email">Email</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea id="message" class="materialize-textarea"></textarea>
+            <label for="message">Message</label>
+          </div>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+          <i class="material-icons right">send</i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">My Portfolio</h5>
+          <p class="grey-text text-lighten-4">Insert your footer content here...</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Links</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        © 2023 My Portfolio. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    const projects = [
+      { id: 1, name: 'Project 1', description: 'This is project 1', image: 'https://via.placeholder.com/300' },
+      { id: 2, name: 'Project 2', description: 'This is project 2', image: 'https://via.placeholder.com/300' },
+      { id: 3, name: 'Project 3', description: 'This is project 3', image: 'https://via.placeholder.com/300' },
+      // Add more projects here
+    ];
+
+    function renderProjects() {
+      const projectCards = document.getElementById('project-cards');
+      projects.forEach(project => {
+        const card = document.createElement('div');
+        card.className = 'card project-card';
+        card.innerHTML = `
+          <div class="card-image">
+            <img src="${project.image}">
+            <span class="card-title">${project.name}</span>
+          </div>
+          <div class="card-content">
+            <p>${project.description}</p>
+          </div>
+          <div class="card-action">
+            <a href="#modal-${project.id}" class="modal-trigger">View Details</a>
+          </div>
+        `;
+        projectCards.appendChild(card);
+      });
+    }
+
+    renderProjects();
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const elems = document.querySelectorAll('.parallax');
+      const instances = M.Parallax.init(elems);
+
+      const sideNav = document.querySelectorAll('.sidenav');
+      M.Sidenav.init(sideNav);
+
+      const modals = document.querySelectorAll('.modal');
+      M.Modal.init(modals);
+    });
+  </script>
+</body>
+</html>

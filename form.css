@@ -1,0 +1,19 @@
+body{
+    background-color: rgb(245, 218, 223);
+}
+
+h1{
+    background: linear-gradient(90deg ,rgba(239, 0, 159, 0.999),rgba(110, 221, 12, 0.962));
+    background-clip: "text";
+    color:transparent;
+    color:rgb(242, 242, 248);
+}
+#redio:checked
+{
+    accent-color:red;
+}
+button
+{
+ border-radius: 4px;
+ margin: 4%;
+}

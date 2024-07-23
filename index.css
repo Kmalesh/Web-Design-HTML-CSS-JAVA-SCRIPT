@@ -1,0 +1,77 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body  {
+    background-color: rgb(205, 243, 243);  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+ img {
+    height: 290px;
+    width: 250px;
+    margin: 60px;
+    margin-left:-45%;
+    border-radius: 70px;
+    border-radius: solid 90px;
+    border-color: black;
+    padding: 5px;
+    margin-top: 99px;
+    position: absolute;
+
+    
+}
+
+h1
+{
+    text-align: center;
+    margin: 60%;
+    width: 18;
+    height: 10%;
+    
+}
+
+ul {
+    list-style-type: none;
+    margin:0;
+    padding: 0;
+}
+
+
+li {
+    display: inline-block;
+    margin-right: 50px; /* Add spacing between links */
+    text-align: justify;
+}
+
+a {
+    text-decoration:none ;
+    color: #000000bb; /* Change link color */
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f9f9f9; /* Add a background color */
+    padding: 15px 0; /* Add some padding for better readability */
+    margin: 0%;
+    box-shadow: 0 4px 10px rgba(14, 1, 1, 0.1);
+     
+}
+nav :hover
+{
+    color: blue;
+    display:flexbox
+    
+}
+
+    
+
+
